@@ -19,11 +19,15 @@ window.onload = function() {
     let leftColumnHeight = card0 + card2;
     let RightColumnHeight = card1 + card3;
     let mT = leftColumnHeight - RightColumnHeight;
-    console.log(RightColumnHeight);
+    console.log(document.documentElement.clientWidth);
     console.log(leftColumnHeight);
     console.log(mT);
     container.style.marginTop = ( - margin + "px" );
-    container2.style.marginTop = ( - (leftColumnHeight - RightColumnHeight) - 30 + "px" );
+    if(document.documentElement.clientWidth > 623) {
+      container2.style.marginTop = ( - (leftColumnHeight - RightColumnHeight) - 30 + "px" );
+    } else {
+      container2.style.marginTop = 0;
+    }
   };
 
   var addEvent = function(object, type, callback) {

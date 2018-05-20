@@ -13,6 +13,6 @@ function toggleClass(element, className){
     element.className = classString;
 }
 
-document.getElementById('nav-icon3').addEventListener('click', function() {
+document.getElementById('nav-icon').addEventListener('click', function() {
     toggleClass(document.getElementById('myNav'), 'active');
 });

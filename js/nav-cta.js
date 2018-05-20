@@ -3,7 +3,7 @@ function toggleClass(element, className){
         return;
     }
 
-    var classString = element.className, nameIndex = classString.indexOf(className);
+    let classString = element.className, nameIndex = classString.indexOf(className);
     if (nameIndex == -1) {
         classString += ' ' + className;
     }
@@ -13,6 +13,6 @@ function toggleClass(element, className){
     element.className = classString;
 }
 
-document.getElementById('nav-icon3').addEventListener('click', function() {
-    toggleClass(document.getElementById('nav-icon3'), 'open');
+document.getElementById('nav-icon').addEventListener('click', function() {
+    toggleClass(document.getElementById('nav-icon'), 'open');
 });
