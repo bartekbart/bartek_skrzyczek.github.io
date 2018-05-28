@@ -2,7 +2,13 @@
 ---
 
 //global classes, UI components
-
+a {
+  text-decoration: none;
+  &:hover {
+    color: var(--primary-color-text-on-white);
+    text-decoration: underline;
+  }
+}
 body {
   font: 1rem/1.5 "Roboto",sans-serif;
 }
