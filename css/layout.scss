@@ -8,8 +8,10 @@ body {
 }
 :root {
   --primary-color-text-on-white: #B50315;
-  --primary-color-background: #fb263b;
-  --secondary-color: #b8b8b8;
+  --primary-color-background: #FC5F6F;
+  --active-cta-bg-color: #B50315;
+  --black-color: #000;
+  --white-color: #fff;
 }
 .container-fluid {
   width: 100%;
@@ -76,22 +78,27 @@ body {
   }
   a {
     display: inline-block;
-    font-size: 14px;
+    font-size: 1em;
     line-height: 14px;
     font-weight: 700;
-    color: #212121;
+    color: var(--black-color);
     background: var(--primary-color-background);
-    padding: 14px 50px;
+    padding: 1.5em 3em;
     border-radius: 5px;
     text-decoration: none;
     text-transform: uppercase;
     transition: all 0.3s ease 0s;
     outline: none;
     &:hover {
+      transform: translate(0px,-0.3em);
+      color: var(--white-color);
+      background: var(--active-cta-bg-color);
+      a {
 
+      }
     }
     &:active {
-
+      transform: translate(0px,0.5em);
     }
   }
 }

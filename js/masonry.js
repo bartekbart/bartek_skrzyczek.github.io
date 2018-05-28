@@ -4,11 +4,11 @@ window.onload = function() {
   window.addEventListener('resize', go);
 
   function go(){
-    let entireSpace = document.getElementsByClassName("featured-projects-block__item")[1].offsetHeight;
-    let cardHeight = document.getElementsByClassName("content")[1].offsetHeight;
+    //let entireSpace = document.getElementsByClassName("featured-projects-block__item")[1].offsetHeight;
+    //let cardHeight = document.getElementsByClassName("content")[1].offsetHeight;
     let margin = entireSpace - cardHeight;
-    let container = document.getElementsByClassName("featured-projects-block__item")[3];
-    let container2 = document.getElementsByClassName("featured-projects-block__item")[4];
+    //let container = document.getElementsByClassName("featured-projects-block__item")[3];
+    //let container2 = document.getElementsByClassName("featured-projects-block__item")[4];
 
     let card0 = document.getElementsByClassName("content")[0].offsetHeight;
     let card1 = document.getElementsByClassName("content")[1].offsetHeight;
