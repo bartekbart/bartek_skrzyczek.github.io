@@ -7,6 +7,9 @@
   padding: 4em 0;
 
   article {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
     h1 {
       margin-bottom: 1em;
     }
@@ -15,17 +18,23 @@
       line-height: 1.6;
     }
     form {
-      label {
+      display: flex;
+      width: 100%;
+      flex-wrap: wrap;
+
         input {
-          
+          flex: 0 0 100%;
+          height: 50px;
+          font-size: 1em;
         }
         textarea {
-
+          flex: 0 0 100%;
+          height: 50px;
+          font-size: 1em;
         }
       }
     }
   }
-}
 
 @media screen and (min-width: 768px) {
   .about-the-author--container {

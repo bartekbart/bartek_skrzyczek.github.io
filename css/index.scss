@@ -69,20 +69,25 @@ section {
       a {
         position: relative;
         display: block;
+        transition: all 0.3s ease 0s;
         &:hover {
+          transform: translate(0px, -0.3em);
           img {
             opacity: 0.9;
           }
           .project-tile__title {
             display:inline-block;
             text-decoration: underline;
+            color: var(--primary-color-text-on-white);
           }
+        }
+        &:active {
+          transform: translate(0px, 0.5em);
         }
       }
       img {
         width: 100%;
         vertical-align: bottom;
-        margin-bottom: 1em;
       }
       .project-tile__overlay {
         bottom: 0;
@@ -94,11 +99,13 @@ section {
         width: 100%;
         -webkit-transition: 0.2s ease-in-out;
         transition: 0.2s ease-in-out;
+        box-shadow: 0 12px 44px 0 rgba(55, 71, 79, 0.44);
       }
       .project-tile__title {
         font-size: 1.5em;
         text-decoration: none;
         display:inline-block;
+        padding: 1em;
         &:hover {
           text-decoration: underline;
           &~.project-tile__image {
@@ -297,6 +304,7 @@ section {
     -ms-flex: 1 100%;
     flex: 1 100%;
     margin-bottom: 2em;
+    box-shadow: 0 12px 44px 0 rgba(55, 71, 79, 0.44);
   }
 
   @media screen and (min-width: 968px) {
@@ -337,6 +345,7 @@ section.description {
     font-size: 1.5em;
     width: 100%;
     text-align: left;
+    font-weight: 400;
     small {
       font-size: 0.75em;
     }

@@ -7,7 +7,7 @@ body {
   font: 1rem/1.5 "Roboto",sans-serif;
 }
 :root {
-  --primary-color-text-on-white: #B50315;
+  --primary-color-text-on-white: #B40415;
   --primary-color-background: #FC5F6F;
   --active-cta-bg-color: #B50315;
   --black-color: #000;
@@ -71,6 +71,7 @@ body {
 .button {
   color: #212121;
   display: flex;
+  margin: 2em 0;
   &.button-center {
     justify-content: center;
     align-items: center;
@@ -89,13 +90,11 @@ body {
     text-transform: uppercase;
     transition: all 0.3s ease 0s;
     outline: none;
+    box-shadow: 0 12px 38px 0 rgba(55, 71, 79, 0.55);
     &:hover {
       transform: translate(0px,-0.3em);
       color: var(--white-color);
       background: var(--active-cta-bg-color);
-      a {
-
-      }
     }
     &:active {
       transform: translate(0px,0.5em);
@@ -121,7 +120,10 @@ header {
             display: flex;
             align-items: center;
             &.home-page {
-              color: #fb263b;
+              color: var(--primary-color-text-on-white);
+              svg {
+                fill: var(--primary-color-text-on-white);
+              }
             }
             svg {
               height: 27px;
