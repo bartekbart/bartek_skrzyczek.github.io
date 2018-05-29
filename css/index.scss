@@ -102,7 +102,7 @@ section {
         box-shadow: 0 12px 44px 0 rgba(55, 71, 79, 0.44);
       }
       .project-tile__title {
-        font-size: 1.5em;
+        font-size: 1em;
         text-decoration: none;
         display:inline-block;
         padding: 1em;
@@ -113,7 +113,7 @@ section {
           }
         }
         .project-tile__description {
-          font-size: 0.75em;
+          font-size: 0.9em;
           display: block;
         }
       }
@@ -164,6 +164,12 @@ section {
   section .featured-projects-block__list .right-column .featured-projects-block__item
    {
       padding-right: 25px;
+    }
+  }
+
+  @media screen and (min-width: 1280px) {
+    section .featured-projects-block__list .featured-projects-block__item .project-tile__title {
+      font-size: 1.5em;
     }
   }
 
