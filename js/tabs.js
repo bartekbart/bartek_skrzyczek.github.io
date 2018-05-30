@@ -13,7 +13,7 @@ function changeTag(evt, field) {
 }
 
 let articles = document.getElementsByClassName("tab-content");
-articles[0].style.display = "grid";
+window.onload = articles[0].style.display = "grid";
 
 
 

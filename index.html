@@ -272,17 +272,20 @@
         <h1>Contact</h1>
         <p>Would you like you to start collaboration?</p>
         <p>I am open to a new job perspectives.</p>
-        <form id="contact-form" action="https://formspree.io/bartek.skrzyczek@gmail.com" method="post">
-        	<input type="text" name="Name" placeholder="Name" required>
-        	<input type="email" name="Email" placeholder="Email" required>
-        	<textarea name="Message" cols="30" rows="6" placeholder="Message" required></textarea>
-        	<!-- CONFIG -->
-        	<input class="is-hidden" type="text" name="_gotcha">
-        	<input type="hidden" name="_subject" value="Subject">
-        	<input type="hidden" name="_cc" value="email@cc.com">
-        	<!-- /CONFIG -->
-        	<input class="submit" type="submit" value="Send">
-        </form>
+        <div id="formBlock">
+        		<form id="someForm">
+        			<label for="name">Name:</label> <input type="text" id="name" required><br/>
+        			<label for="email">Email:</label> <input type="email" id="email" required><br/>
+        			<label for="comments">Comments:</label> <br/>
+        			<textarea id="comments"></textarea><br/>
+        		<button id="email-button" type="submit">Send message</button>
+        		</form>
+        	</div>
+        	<div id="thankyouBlock" style="display:none">
+        		<p>
+        			Thank you for filling out the form. I care a lot about it.
+        		</p>
+        	</div>
         <p>Would you like to stay in touch? Here there is my <a href="https://www.linkedin.com/in/bartek-skrzyczek-445a9567/">Linkedln profile.</a></p>
         <p>The page is currently under maintenance.</p>
         <p><a href="https://github.com/bartek-skrzyczek/bartek-skrzyczek.github.io/blob/master/README.md" target="blank">Here there is a list of upcoming changes</a>Thanks!</p>
@@ -303,6 +306,9 @@
   <script src="../js/overlaying.js"></script>
   <script src="../js/masonry.js"></script>
   <script src="../js/tabs.js"></script>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script type="text/javascript" src="../js/e-mail-validations.js"></script>
+
   <script src="../js/formspree.js"></script>
 
 </body>
