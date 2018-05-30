@@ -12,8 +12,12 @@ function changeTag(evt, field) {
   evt.currentTarget.className += " tab-active";
 }
 
-let articles = document.getElementsByClassName("tab-content");
-articles[0].style.display = "flex";
+function aa() {
+  let articles = document.getElementsByClassName("tab-content");
+  articles[0].style.display = "flex";
+};
+
+aa();
 
 
 
