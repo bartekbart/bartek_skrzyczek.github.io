@@ -8,12 +8,12 @@ function changeTag(evt, field) {
   for (i = 0; i < x.length; i++) {
       tablinks[i].className = tablinks[i].className.replace(" tab-active", "");
   }
-  document.getElementById(field).style.display = "grid";
+  document.getElementById(field).style.display = "flex";
   evt.currentTarget.className += " tab-active";
 }
 
 let articles = document.getElementsByClassName("tab-content");
-window.onload = articles[0].style.display = "grid";
+articles[0].style.display = "flex";
 
 
 
