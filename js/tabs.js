@@ -1,67 +1,70 @@
-function changeTag(evt, field) {
-  let i, x, tablinks;
-  x = document.getElementsByClassName("tab-content");
-  for (i = 0; i < x.length; i++) {
-      x[i].style.display = "none";
+var tabLinks = new Array();
+var contentDivs = new Array();
+
+
+function init() {
+
+  // Grab the tab links and content divs from the page
+  var tabListItems = document.getElementById('tabs').childNodes;
+  console.log(tabListItems);
+  for ( var i = 0; i < tabListItems.length; i++ ) {
+    if ( tabListItems[i].nodeName == "LI" ) {
+      var tabLink = getFirstChildWithTagName( tabListItems[i], 'A' );
+      console.log(tabLink);
+      var id = getHash( tabLink.getAttribute('href') );
+      tabLinks[id] = tabLink;
+      contentDivs[id] = document.getElementById( id );
+    }
   }
-  tablinks = document.getElementsByClassName("tab-header");
-  for (i = 0; i < x.length; i++) {
-      tablinks[i].className = tablinks[i].className.replace(" tab-active", "");
+
+  // Assign onclick events to the tab links, and
+  // highlight the first tab
+  var i = 0;
+
+  for ( var id in tabLinks ) {
+    tabLinks[id].onclick = showTab;
+    tabLinks[id].onfocus = function() { this.blur() };
+    if ( i == 0 ) tabLinks[id].parentNode.className = 'selected';
+    i++;
   }
-  document.getElementById(field).style.display = "flex";
-  evt.currentTarget.className += " tab-active";
+
+  // Hide all content divs except the first
+  var i = 0;
+
+  for ( var id in contentDivs ) {
+    if ( i != 0 ) contentDivs[id].className = 'tabContent hide';
+    i++;
+  }
 }
 
-function aa() {
-  let articles = document.getElementsByClassName("tab-content");
-  articles[0].style.display = "flex";
-};
+init();
 
-aa();
+function showTab() {
+  var selectedId = getHash( this.getAttribute('href') );
 
-
-
-let buttons = document.getElementsByClassName("tab-header");
-let smoke = document.getElementsByClassName("smoke");
-
-let factory = document.querySelectorAll(".factory");
-let band    = document.querySelectorAll(".band ul li");
-let myArray = Array.from(band);
-let robot   = document.querySelectorAll(".robot");
-
-buttons[0].addEventListener("click", function() {
-  console.log(smoke);
-  smoke[0].classList.add("smoke-active");
-  robot[0].classList.remove("robot-active");
-  factory[0].classList.add("element-activated");
-  setTimeout(function(){
-    factory[0].classList.remove("element-activated");
-  }, 300);
-  for(let i=0; i<myArray.length; i++) {
-    myArray[i].classList.remove("li-animate");
+  // Highlight the selected tab, and dim all others.
+  // Also show the selected content div, and hide all others.
+  for ( var id in contentDivs ) {
+    if ( id == selectedId ) {
+      tabLinks[id].parentNode.className = 'selected';
+      contentDivs[id].className = 'tabContent';
+    } else {
+      tabLinks[id].parentNode.className = '';
+      contentDivs[id].className = 'tabContent hide';
+    }
   }
-})
 
-buttons[1].addEventListener("click", function() {
-  smoke[0].classList.remove("smoke-active");
-  robot[0].classList.remove("robot-active");
-  factory[1].classList.add("element-activated");
-  setTimeout(function(){
-    factory[1].classList.remove("element-activated");
-  }, 300);
-  for(let i=0; i<myArray.length; i++) {
-    myArray[i].classList.add("li-animate");
-  }
-})
+  // Stop the browser following the link
+  return false;
+}
 
-buttons[2].addEventListener("click", function() {
-  smoke[0].classList.remove("smoke-active");
-  robot[0].classList.add("robot-active");
-  robot[0].classList.add("element-activated");
-  setTimeout(function(){
-    robot[0].classList.remove("element-activated");
-  }, 300);
-  for(let i=0; i<myArray.length; i++) {
-    myArray[i].classList.remove("li-animate");
+function getFirstChildWithTagName( element, tagName ) {
+  for ( var i = 0; i < element.childNodes.length; i++ ) {
+    if ( element.childNodes[i].nodeName == tagName ) return element.childNodes[i];
   }
-})
+}
+
+function getHash( url ) {
+  var hashPos = url.lastIndexOf ( '#' );
+  return url.substring( hashPos + 1 );
+}
