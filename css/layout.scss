@@ -125,6 +125,9 @@ header {
             height: 20px;
             display: flex;
             align-items: center;
+            &:hover {
+              cursor: pointer;
+            }
             &.home-page {
               color: var(--primary-color-text-on-white);
               svg {
