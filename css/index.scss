@@ -72,6 +72,7 @@ section {
         transition: all 0.3s ease 0s;
         &:hover {
           transform: translate(0px, -0.3em);
+          cursor: pointer;
           img {
             opacity: 0.9;
           }
@@ -113,7 +114,7 @@ section {
           }
         }
         .project-tile__description {
-          font-size: 0.9em;
+          font-size: 0.8em;
           display: block;
         }
       }
@@ -248,7 +249,6 @@ section.description {
   }
 }
 
-
 /* The Overlay (background) */
 .overlay {
     /* Height & width depends on how you want to reveal the overlay (see JS below) */
@@ -305,7 +305,6 @@ section.description {
         right: 35px;
     }
 }
-
 
 ul#tabs {
   display: -webkit-box;

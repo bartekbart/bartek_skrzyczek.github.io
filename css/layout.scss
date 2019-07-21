@@ -2,18 +2,24 @@
 ---
 
 //global classes, UI components
+.margin-right-5 {
+  margin-right: 5px;
+}
 a {
+  color: var(--primary-color-text-on-white);
   text-decoration: none;
   &:hover {
-    color: var(--primary-color-text-on-white);
+    color: var(--primary-color-text-on-white-hover);
     text-decoration: underline;
+    cursor: pointer;
   }
 }
 body {
   font: 1rem/1.5 "Roboto",sans-serif;
 }
 :root {
-  --primary-color-text-on-white: #B40415;
+  --primary-color-text-on-white: #375695;
+  --primary-color-text-on-white-hover: #123f9b;
   --primary-color-background: #FC5F6F;
   --active-cta-bg-color: #B50315;
   --black-color: #000;
@@ -93,14 +99,15 @@ body {
     padding: 1.5em 3em;
     border-radius: 5px;
     text-decoration: none;
-    text-transform: uppercase;
     transition: all 0.3s ease 0s;
     outline: none;
     box-shadow: 0 12px 38px 0 rgba(55, 71, 79, 0.55);
+    cursor: pointer;
     &:hover {
       transform: translate(0px,-0.3em);
       color: var(--white-color);
       background: var(--active-cta-bg-color);
+      text-decoration: underline;
     }
     &:active {
       transform: translate(0px,0.5em);
@@ -119,20 +126,16 @@ header {
       margin-right: auto;
       display: flex;
         li {
+          display: flex;
           margin: 20px;
           margin-left: 0px;
           a {
             height: 20px;
             display: flex;
             align-items: center;
+            margin-left: 5px;
             &:hover {
               cursor: pointer;
-            }
-            &.home-page {
-              color: var(--primary-color-text-on-white);
-              svg {
-                fill: var(--primary-color-text-on-white);
-              }
             }
             svg {
               height: 27px;

@@ -1,5 +1,11 @@
 ---
 ---
+
+$color-red: #FF0000;
+$color-green: #00FF00;
+$color-blue: #0000FF;
+$color-gray-light: #dedede;
+
 section.project-description {
   margin: 4rem auto;
   padding-left: 70px;
@@ -11,7 +17,7 @@ section.project-description {
   }
   h2 {
     color: #fb263b;
-    font-size: 4em;
+    font-size: 2em;
     font-weight: 300;
     line-height: 1.2;
     margin-bottom: .75em;
@@ -25,13 +31,13 @@ section.project-description {
   }
   .project-intro {
     .project-intro__facts {
-        //margin-left: -20em;
-        //width: 65%;
+      padding: 0.5em;
+      background-color: $color-gray-light;
     }
     .project-intro__text {
       padding-top: 3.3em;
+      font-size: 1.2em;
       p {
-
       }
     }
     .fact-box {
