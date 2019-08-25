@@ -42,7 +42,7 @@ body {
     flex-direction: column;
   }
 }
-  .navigation-row {
+.navigation-row {
     @extend .row;
     max-width: 70rem;
 }
