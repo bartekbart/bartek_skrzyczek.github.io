@@ -15,7 +15,7 @@ a {
   }
 }
 body {
-  font: 1rem/1.5 "Roboto",sans-serif;
+  font: 1rem/1.7 "Roboto",sans-serif;
 }
 :root {
   --primary-color-text-on-white: #375695;
@@ -34,13 +34,17 @@ body {
   box-sizing: border-box;
 }
 .row {
-  max-width: 75rem;
+  max-width: 45rem;
   margin-left: auto;
   margin-right: auto;
   display: flex;
   &.row-column {
     flex-direction: column;
   }
+}
+  .navigation-row {
+    @extend .row;
+    max-width: 70rem;
 }
 
 .two-columns {
@@ -239,6 +243,19 @@ header {
       }
     }
   }
+}
+
+.alert {
+  position: relative;
+  padding: .75rem 1.25rem;
+  border: 1px solid transparent;
+  border-radius: .25rem;
+}
+
+.alert-secondary {
+  color: #383d41;
+  background-color: #e2e3e5;
+  border-color: #d6d8db;
 }
 
 /* The Overlay (background) */
